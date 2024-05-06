@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="buttons">
+    <span
+      class="option"
+      [class.selected]="selectedMenu == 'profil'"
+      (click)="selectedMenu = 'profil'"
+      >Profil client</span
+    >
+    <span
+      class="option"
+      [class.selected]="selectedMenu == 'script'"
+      (click)="selectedMenu = 'script'"
+      >Script d'appel</span
+    >
+  </div>
+  <div class="profil-card">
+    <img
+      src="https://media.istockphoto.com/id/1189748805/photo/happy-grandfather-looking-at-camera-talking-to-grown-up-children.jpg?s=612x612&w=0&k=20&c=PgdP-CCcI6BK9f0z_wK1eBGg2iWU8_hztzQJ8r0Nea4="
+      alt=""
+      class="profil-img"
+    />
+    <div class="profil-info">
+      <div class="id">ID : 798541245</div>
+      <div class="name">Date de naissance : 01/01/1934</div>
+      <div class="city">Age : 90</div>
+      <div class="zip">Sexe : Homme</div>
+      <div class="zip">Adresse: Avenue de la Sallaz 43. 1010 Lausanne</div>
+    </div>
+  </div>
+</div>
+<app-tablet-info />
+<app-needs />
+<app-notes />
+<div class="service">
+  <div class="icon">
+    <app-svg-icon [icon]="'assets/svg/magic.svg'" [width]="35"></app-svg-icon>
+  </div>
+  <span class="title">Services et prestations</span>
+</div>

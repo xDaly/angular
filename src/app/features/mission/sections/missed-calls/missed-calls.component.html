@@ -1,0 +1,8 @@
+<div class="card">
+  <span class="title">Appels en absences</span>
+  <div class="missed-calls-wrapper">
+    @for (missedCall of missedCalls; track $index) {
+    <app-call-element [customer]="missedCall" />
+    }
+  </div>
+</div>

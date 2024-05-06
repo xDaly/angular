@@ -1,0 +1,46 @@
+<div
+  class="accordion light-accordion"
+  id="simpleaccordion"
+  ngbAccordion
+  [closeOthers]="true"
+>
+  <div class="accordion-item" ngbAccordionItem [collapsed]="isCollapsed">
+    <h2 ngbAccordionHeader class="accordion-header" id="headingOne">
+      <button
+        class="accordion-button collapsed active"
+        type="button"
+        (click)="isCollapsed = !isCollapsed"
+      >
+      Types des besoins spécifiques
+      </button>
+      <i
+        [ngClass]="
+          isCollapsed
+            ? 'fa-solid fa-chevron-down'
+            : 'fa-solid fa-chevron-up'
+        "
+      ></i>
+    </h2>
+    <div
+      class="accordion-collapse"
+      id="collapseOne"
+      aria-labelledby="headingOne"
+      data-bs-parent="#simpleaccordion"
+      ngbAccordionCollapse
+    >
+      <div class="accordion-body" ngbAccordionBody>
+        <ng-template>
+          <ul>
+            <li>ID de la tablette : <span> MLDHBNZDD68432684 </span></li>
+            <li>
+              Localisation de la tablette:
+              <a href=""> Afficher la localisation </a>
+            </li>
+            <li>Niveau de charge: <span>85% </span></li>
+            <li>Alimentation de la tablette:<span>En charge </span></li>
+          </ul>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="sidebar">
+  <div class="logo-wrapper">
+    <a [routerLink]="'/dashboard'">
+      <img
+        class="img-fluid"
+        style="width: 50px"
+        src="assets/images/logo-w-bg.png"
+        alt=""
+      />
+    </a>
+    <div class="back-btn"><i class="fa fa-angle-left"> </i></div>
+  </div>
+  <nav class="sidebar-main">
+    <div id="sidebar-menu">
+      <ul class="sidebar-links" id="bar">
+        <li class="back-btn">
+          <a></a>
+          <div class="mobile-back text-end">
+            <span>Back</span
+            ><i class="fa fa-angle-right ps-2" aria-hidden="true"></i>
+          </div>
+        </li>
+        <li class="sidebar-main-title">
+          <div></div>
+        </li>
+        @for(mainMenu of menus; track mainMenu){
+        <li
+          class="sidebar-list"
+          [class.disabled]="mainMenu.disabled"
+          [routerLink]="mainMenu.path"
+          routerLinkActive="sidebarActive"
+        >
+          <a
+            class="sidebar-link sidebar-title"
+            (click)="!mainMenu.path ? toggleMenu(mainMenu) : null"
+          >
+            @if(mainMenu.icon){
+            <app-svg-icon [icon]="mainMenu.icon"></app-svg-icon>
+            }
+            <span>{{ mainMenu.mainTitle! | translate }}</span>
+          </a>
+          <ul
+            class="sidebar-submenu theme-scrollbar"
+            [ngStyle]="{ display: mainMenu.active ? 'block' : 'none' }"
+          >
+            <li class="sidebar-head">{{ mainMenu.headTitle1! | translate }}</li>
+          </ul>
+        </li>
+        }
+        <p
+          style="
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+          "
+        >
+         V {{version}}
+        </p>
+      </ul>
+    </div>
+  </nav>
+</div>

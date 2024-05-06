@@ -1,0 +1,81 @@
+.accordion {
+  margin: 10px 0px;
+}
+.accordion-item {
+  border-radius: 15px !important;
+  border: none !important;
+}
+.accordion-header {
+  display: flex;
+  align-items: center;
+  background-color: #1eb4eb;
+  text-align: center;
+  border-radius: 25px 25px 0px 0px !important;
+
+  button {
+    background-color: #1eb4eb;
+    justify-content: center !important;
+    border-radius: 25px 25px 0px 0px !important;
+    font-weight: 700;
+    color: #ffffff;
+    &:after {
+      content: none;
+    }
+  }
+  .fa-solid {
+    font-size: 15px;
+    margin-right: 15px;
+  }
+}
+
+ul {
+  list-style-type: disc; /* Default bullet style */
+  list-style-position: outside; /* Default position */
+  margin: 0; /* Remove any custom margins */
+  padding: 0; /* Remove any custom padding */
+  padding-left: 10px; /* Default padding on the left for the bullets */
+  height: 200px;
+  overflow: auto;
+
+  li {
+    margin: 0; /* Remove any custom margins */
+    padding: 0; /* Remove any custom padding */
+    margin-bottom: 10px !important;
+  }
+}
+
+.new-note {
+  position: relative;
+  margin: 5px;
+  //   border: 1px solid #1eb4eb;
+  border-radius: 50px;
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #1eb4eb;
+    height: 50px;
+    border-radius: 50px;
+
+    outline-color: #1eb4eb !important;
+    &:focus,
+    &:focus-visible {
+    }
+  }
+  .add-note-button {
+    top: 10px;
+    right: 17px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 25px;
+    height: 30px;
+
+    span {
+      font-size: 8px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

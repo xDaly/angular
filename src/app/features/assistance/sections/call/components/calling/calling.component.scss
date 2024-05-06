@@ -1,0 +1,29 @@
+.wrapper {
+  position: relative;
+  .calling {
+    width: calc(100vh - 190px);
+    height: calc(100vh - 140px);
+    object-fit: cover;
+    border-radius: 30px;
+  }
+
+  .name {
+    font-size: 42px;
+    font-weight: 900;
+    color: #fff;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .status {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

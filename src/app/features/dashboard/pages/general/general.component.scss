@@ -1,0 +1,182 @@
+.video-call-wrapper {
+  width: 100%;
+  height: calc(100vh - 10rem);
+  min-height: 50vh;
+
+  .outgoing-video {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .incoming-video {
+    z-index: 9;
+    height: 16.66%;
+    width: 25%;
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+.welcome {
+  display: flex;
+  height: 80vh;
+
+  .left {
+    width: 40%;
+    padding: 15px;
+    .card-info {
+      background-color: white;
+      background-image: url("/assets/svg/assistant.svg");
+      background-size: contain;
+      background-position: 110%;
+      background-repeat: no-repeat;
+
+      height: 35%;
+      max-height: 250px;
+      width: 100%;
+      border: none;
+      border-radius: 25px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      color: #1eb4eb;
+      .name {
+        font-size: 1.5vw;
+      }
+      .greeting {
+        font-size: 1vw;
+      }
+      .date {
+        font-size: 5vw;
+        // margin-top: 5px;
+      }
+    }
+
+    .map-container {
+      margin-top: 10px;
+      border-radius: 15px;
+      background-color: white;
+      padding: 5px;
+      .data {
+        padding: 10px;
+        .title {
+          color: #1eb4eb;
+          padding: 5px;
+        }
+        span {
+          width: 30%;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .right {
+    width: 60%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    padding: 15px;
+    .title {
+      font-size: 1.2vw;
+      color: #1eb4eb;
+      font-weight: 600;
+      height: 40%;
+    }
+    .date {
+      font-size: 2vh;
+      font-weight: 600;
+
+      span {
+        width: 20%;
+      }
+      color: #595959;
+      font-weight: 600;
+    }
+    .data {
+      color: #595959;
+      font-size: 4vh;
+      font-weight: 700;
+    }
+    .time {
+      color: #595959;
+      font-size: 2vh;
+      font-weight: 600;
+
+      span {
+        width: 20%;
+      }
+    }
+    .card-shape {
+      width: 45%;
+      height: 18%;
+      border-radius: 15px;
+      padding: 10px;
+      border: none;
+      background-color: white;
+    }
+    .welcome-card {
+      width: 90%;
+      height: 18%;
+      border-radius: 15px;
+      padding: 10px;
+      border: none;
+      background-color: white;
+    }
+    .last-connection {
+      background-image: url("/assets/svg/general/last-connection.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+
+    .last-disconnect {
+      background-image: url("/assets/svg/general/last-disconnect.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+
+    .success-calls {
+      background-image: url("/assets/svg/general/success-calls.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+
+    .total-calls {
+      background-image: url("/assets/svg/general/total-calls.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+
+    .received-calls {
+      background-image: url("/assets/svg/general/received-calls.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+    .outgoing-calls {
+      background-image: url("/assets/svg/general/outgoing-calls.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+    .ratio-calls {
+      background-image: url("/assets/svg/general/ratio-calls.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+
+    .missions {
+      background-image: url("/assets/svg/general/missions.svg");
+      background-size: 20%;
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+  }
+}

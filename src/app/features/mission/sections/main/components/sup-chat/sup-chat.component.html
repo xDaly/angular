@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="header">
+    <img
+      class="image"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDUMAsVh7KP4om2T2hhwTC_0kfzEzw_uIF_ZI7xchLHA&s"
+      alt=""
+    />
+    <span class="name">Roger Panuzzo</span>
+  </div>
+  <div class="messages" #chatContainer>
+    @for (item of messages; track $index) {
+    <app-message [message]="item" />
+    }
+  </div>
+  <div class="send">
+    <input
+      class="msg"
+      placeholder="Ecrire votre message..."
+      type="text"
+      name="message"
+      id=""
+    />
+    <a class="send-message" (click)="send()">
+      <app-svg-icon [width]="20" [icon]="'/assets/svg/send.svg'"></app-svg-icon>
+      Envoyer
+    </a>
+  </div>
+</div>

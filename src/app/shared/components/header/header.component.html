@@ -1,0 +1,119 @@
+<div
+  [ngClass]="navService.isDisplay ? 'page-header close_icon' : 'page-header'"
+  [ngStyle]="{ display: show ? 'none' : 'block' }"
+  [class.sidebar-default]="navService.isShow == true"
+>
+  <div class="header-wrapper row m-0">
+    <div class="logo-wrapper">
+      <a [routerLink]="'/dashboard'"
+        ><img class="img-fluid" src="assets/images/logo/logo.png" alt=""
+      /></a>
+    </div>
+    <svg class="stroke-icon toggle-sidebar" (click)="openMenu()">
+      <use
+        class="status_toggle middle sidebar-toggle"
+        href="assets/svg/icon-sprite.svg#Grid"
+      ></use>
+    </svg>
+
+    <!-- <div class="col-auto p-0">
+      <app-search></app-search>
+    </div> -->
+    <!-- <p style="position: absolute;">{{_socket.lastData()}}</p> -->
+    <div class="nav-right col-auto pull-right right-header p-0 ms-auto">
+      <ul class="nav-menus" [class.open]="open">
+        <li class="serchinput">
+          <div class="serchbox" (click)="openSearch()">
+            <svg>
+              <use href="assets/svg/icon-sprite.svg#Search"></use>
+            </svg>
+          </div>
+          <div class="form-group search-form" [ngClass]="open ? 'open' : ''">
+            <input
+              class="demo-input Typeahead-input form-control-plaintext w-100"
+              [class.open]="open"
+              [(ngModel)]="text"
+              [ngModelOptions]="{ standalone: true }"
+              (keyup)="searchTerm(text)"
+              type="text"
+              placeholder="Type to Search .."
+              name="q"
+              title=""
+              autocomplete="off"
+            />
+          </div>
+        </li>
+        <li class="onhover-dropdown">
+          <app-status />
+        </li>
+
+        <li class="onhover-dropdown">
+          <custom-menu
+            [icon]="'/assets/svg/flag.svg'"
+            [width]="22"
+            [name]="'Reclamations'"
+          />
+        </li>
+        <li class="onhover-dropdown">
+          <custom-menu
+            [icon]="'/assets/svg/calendar.svg'"
+            [width]="22"
+            [name]="'Calendar'"
+          />
+        </li>
+        <li class="onhover-dropdown message-box">
+          <custom-menu
+            [icon]="'/assets/svg/mail.svg'"
+            [width]="22"
+            [name]="'Messages'"
+          />
+        </li>
+        <li class="onhover-dropdown">
+          <custom-menu
+            [icon]="'/assets/svg/bell.svg'"
+            [width]="22"
+            [name]="'Notifications'"
+          />
+        </li>
+        <li class="language-nav" (click)="languageToggle()">
+          <app-language></app-language>
+        </li>
+        <li class="profile-nav onhover-dropdown pe-0 py-0">
+          <app-profile></app-profile>
+        </li>
+        @if(menuItems.length){
+        <div
+          class="Typeahead-menu theme-scrollbar"
+          [class.is-open]="searchResult"
+          id="search-outer"
+          [class.open]="open"
+          (clickOutside)="clickOutside()"
+        >
+          @for(menuItem of menuItems | slice : 0 : 8; track menuItem){
+          <div class="ProfileCard u-cf">
+            <div class="ProfileCard-details">
+              <div class="ProfileCard-realName">
+                <div class="ProfileCard-avatar">
+                  <app-svg-icon [icon]="menuItem.icon"></app-svg-icon>
+                </div>
+                <a
+                  [routerLink]="menuItem?.path"
+                  class="realname"
+                  (click)="removeFix()"
+                  >{{ menuItem?.title }}</a
+                >
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+        }
+        <div class="Typeahead-menu is-open" [class.is-open]="searchResultEmpty">
+          <div class="tt-dataset tt-dataset-0">
+            <div class="EmptyMessage">Opps!! There are no result found.</div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

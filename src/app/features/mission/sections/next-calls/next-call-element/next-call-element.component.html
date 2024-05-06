@@ -1,0 +1,36 @@
+<div class="missed-call">
+  <div class="image-wrapper">
+    <img
+      width="50"
+      height="50"
+      loading="lazy"
+      [ngSrc]="CDN_URL +'/uploads/customer/' + customer.id +'.webp'"      alt=""
+      appFallbackSvg  [first_name]="customer.first_name" [last_name]="customer.last_name"
+    />
+  </div>
+  <div class="info-wrapper">
+    <div class="client-info">
+      <span class="name">
+        <!-- <i class="fa-solid fa-user"></i> -->
+        {{ customer.first_name + " " + customer.last_name }}
+      </span>
+      <span class="missed-calls">
+        <i class="fa-regular fa-address-card"></i>
+        Date et heure: 22.2.2024-16h-53 |
+        <i class="fa-regular fa-address-card"></i> ID:
+        {{ customer.registration_number }} |
+        <i class="fa-solid fa-angles-up"></i> Elevé
+      </span>
+    </div>
+  </div>
+  <div class="status-wrapper">
+    @if (customer.status == "online") {
+    <i class="fa-solid fa-circle onlinec"></i>
+    <span class="onlinec"> Disponible </span>
+    } @else {
+
+    <i class="fa-solid fa-circle offlinec"></i>
+    <span class="offlinec"> On Call </span>
+    }
+  </div>
+</div>

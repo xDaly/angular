@@ -1,0 +1,67 @@
+<ul class="nav nav-tabs border-tab nav-primary" id="info-tab" role="tablist" ngbNav #nav="ngbNav" [(activeId)]="active">
+    <li class="nav-item" [ngbNavItem]="1"><a class="nav-link " id="info-home-tab" href="javascript:void(0)"
+        ngbNavLink>CALL</a>
+      <div class="material-border"></div>
+      <ng-template ngbNavContent>
+        <div class="tab-pane fade show" id="info-home">
+          <div class="people-list">
+            <ul class="list theme-scrollbar">
+              @for(data of chatuser; track data ){
+              <li class="clearfix">
+                <img class="rounded-circle user-image" src="{{data.img}}" alt="">
+                <div class="about">
+                  <div class="name">{{data.user}}</div>
+                  <div class="status"><i class="fa fa-{{data.callType}} font-{{data.callTypeColor}}"></i>{{data. date}}
+                  </div>
+                </div>
+              </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+    <li class="nav-item" [ngbNavItem]="2"><a class="nav-link" id="profile-info-tab" href="javascript:void(0)"
+        ngbNavLink>STATUS</a>
+      <div class="material-border"></div>
+      <ng-template ngbNavContent>
+        <div class="tab-pane fade show" id="info-profile">
+          <div class="people-list">
+            <div class="search">
+              <form class="theme-form">
+                <div class="mb-3">
+                  <input class="form-control" type="text" placeholder="Write Status..."><i class="fa fa-pencil"></i>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="status">
+            <p class="font-dark">Active</p>
+            <hr>
+            <p>Established fact that a reader will be distracted <i
+                class="icofont icofont-emo-heart-eyes font-danger f-20"></i><i
+                class="icofont icofont-emo-heart-eyes font-danger f-20 m-l-5"></i>
+            </p>
+            <hr>
+            <p>Dolore magna aliqua  <i class="icofont icofont-emo-rolling-eyes font-success f-20"></i></p>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+    <li class="nav-item" [ngbNavItem]="3"><a class="nav-link" id="contact-info-tab" href="javascript:void(0)"
+        ngbNavLink>PROFILE</a>
+      <div class="material-border"></div>
+      <ng-template ngbNavContent>
+        <div class="user-profile">
+          <div class="image">
+            <div class="avatar text-center"><img alt="" src="assets/images/user/2.png"></div>
+            <div class="icon-wrapper"><i class="icofont icofont-pencil-alt-5"></i></div>
+          </div>
+          <app-profile-tab></app-profile-tab>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+  <div class="tab-content" id="info-tabContent">
+    <div [ngbNavOutlet]="nav" class="mt-4"></div>
+  </div>

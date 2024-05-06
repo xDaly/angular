@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="remote-container">
+    <app-localstream />
+  </div>
+  <div class="counter-container">
+    @if (isCallStarted()) {
+    <app-call-counter />
+    }
+  </div>
+  @if (isCallStarted()) {
+  <div class="controls-container">
+    <app-call-controls />
+  </div>
+}
+  @if (isCallStarted()) {
+  <app-remotestream />
+  } @if (!isCallStarted()) {
+  <app-calling [customer]="customer()" />
+  }
+</div>

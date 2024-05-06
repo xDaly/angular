@@ -1,0 +1,20 @@
+<div class="counter">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="10.9665"
+      cy="10.9667"
+      r="10.05"
+      fill="white"
+      fill-opacity="1"
+    />
+    <circle cx="10.9666" cy="10.9666" r="5.58333" [attr.fill]="date ? green : red" />
+  </svg>
+
+  <span class="timer">{{ duration | convertSeconds }}</span>
+</div>

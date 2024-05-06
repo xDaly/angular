@@ -1,0 +1,36 @@
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 200;
+  .btn-control {
+    border-radius: 50px;
+    height: 40px;
+    padding: 10px;
+    margin: 0px 5px;
+    width: 33%;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      margin-left: 5px;
+      font-size: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .share-screen {
+    background-color: white;
+    color: #1eb4eb;
+  }
+  .waiting {
+    background-color: white;
+    color: #1eb4eb;
+  }
+  .hangup {
+    background-color: #ff4949;
+    color: white;
+  }
+}

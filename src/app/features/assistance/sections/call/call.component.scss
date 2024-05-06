@@ -1,0 +1,31 @@
+.card {
+  background-color: rgb(255, 255, 255);
+  // padding: 10px;
+  margin: 0 !important;
+  border-radius: 30px !important;
+  overflow: hidden;
+  position: relative;
+  z-index: 200;
+  .remote-container {
+    z-index: 9999;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .counter-container {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  .controls-container {
+    background-color: #0000005f;
+    padding: 10px;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 30px;
+    left: 11.5%;
+    right: 11.5%;
+    z-index: 200;
+  }
+}
+

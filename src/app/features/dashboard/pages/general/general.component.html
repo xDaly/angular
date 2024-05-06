@@ -1,0 +1,93 @@
+<!-- <div>
+  <form (submit)="joinCall()">
+    <button type="submit">Join</button>
+  </form>
+  <button (click)="leaveCall()">Leave</button>
+</div>
+
+<app-video
+  [track]="agoraService.getLocalVideoTrack()"
+  [videoId]="'local-video'"
+></app-video>
+<app-video
+  *ngFor="let remoteTrack of agoraService.remoteUsers | keyvalue; let i = index"
+  [track]="remoteTrack.value"
+  [videoId]="'remote-video-' + i"
+></app-video> -->
+<div class="welcome">
+  <div class="left">
+    <div class="card-info">
+      <span class="name">Bonjour, <strong> François clemenceau</strong> </span>
+      <span class="greeting"
+        >On vous souhaite une agréable journée au travail !</span
+      >
+      <span class="date"
+        >{{ time | date : "hh" }}H{{ time | date : "mm" }}</span
+      >
+    </div>
+
+    <div class="map-container">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103585.00104357186!2d10.77288053723296!3d35.77460790680358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13026d32a5e44e6f%3A0xd7c596a59fe98e14!2sDomino%20Pizza!5e0!3m2!1sen!2stn!4v1710854604983!5m2!1sen!2stn"
+          width="100%"
+          style="border: 0; border-radius: 15px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="data">
+        <h5 class="title">Informations sur le Centre d'Appel</h5>
+        <ul>
+          <li><span>Nom du Centre : </span> SERVICE LILIBOX LAUSANNE</li>
+          <li>
+            <span>Localisation : </span> Avenue de la Sallaz 43. 1010 Lausanne
+          </li>
+          <li><span>Pays : </span> Suisse</li>
+          <li><span>District : </span> Canton de vaud</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="card-shape last-connection">
+      <div class="title">Dernière Connexion</div>
+      <div class="date"><span>Date : </span>22.2.2024</div>
+      <div class="time"><span>Heure : </span>16h53</div>
+    </div>
+    <div class="card-shape last-disconnect">
+      <div class="title">Dernière Déconnexion</div>
+      <div class="date"><span>Date : </span> 21.2.2024</div>
+      <div class="time"><span>Heure : </span> 17h30</div>
+    </div>
+    <div class="card-shape success-calls">
+      <div class="title">Nombre d'Appels Passés Aujourd'hui</div>
+      <div class="data">835 appel(s)</div>
+    </div>
+    <div class="card-shape total-calls">
+      <div class="title">Durée Totale des Appels</div>
+      <div class="data">2,908 min</div>
+    </div>
+    <div class="card-shape received-calls">
+      <div class="title">Nombre des appels reçus</div>
+      <div class="data">835 appel(s)</div>
+    </div>
+    <div class="card-shape outgoing-calls">
+      <div class="title">Nombre des appels émis</div>
+      <div class="data">835 appel(s)</div>
+    </div>
+    <div class="card-shape ratio-calls">
+      <div class="title">Durée Moyenne des Appels</div>
+      <div class="data">15.39 min</div>
+    </div>
+    <div class="card-shape missions">
+      <div class="title">Nombre des Missions</div>
+      <div class="data">423 Mission(s)</div>
+    </div>
+    <div class="welcome-card">
+      
+    </div>
+  </div>
+</div>

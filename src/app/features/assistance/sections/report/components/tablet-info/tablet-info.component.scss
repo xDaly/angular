@@ -1,0 +1,28 @@
+.accordion {
+  margin: 10px 0px;
+}
+.accordion-item {
+  border-radius: 15px !important;
+  border: none !important;
+}
+.accordion-header {
+  display: flex;
+  align-items: center;
+  button {
+    border-radius: 15px !important;
+    font-weight: 700;
+  }
+  .fa-solid {
+    font-size: 15px;
+    margin-right: 15px;
+  }
+}
+
+ul {
+  li {
+    color: #c0c0c0;
+    span {
+        color:black
+    }
+  }
+}

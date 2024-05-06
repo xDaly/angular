@@ -1,0 +1,38 @@
+/* ---------------------
+	*** Theme Scss ***
+-----------------------*/
+
+@import "bootstrap/scss/bootstrap";
+//rating scss //
+
+@import "ngx-bar-rating/themes/br-default-theme.scss";
+@import "ngx-bar-rating/themes/br-horizontal-theme.scss";
+@import "ngx-bar-rating/themes/br-movie-theme.scss";
+@import "ngx-bar-rating/themes/br-square-theme.scss";
+@import "ngx-bar-rating/themes/br-stars-theme.scss";
+@import "ngx-bar-rating/themes/br-vertical-theme.scss";
+
+//  Light Box
+@import "@angular/cdk/overlay-prebuilt.css";
+
+// owl-carousel-o sccss//
+
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default.scss";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel.scss";
+
+@import "node_modules/angular-calendar/css/angular-calendar.css";
+
+@import "@ng-select/ng-select/themes/default.theme.css";
+@import "node_modules/flatpickr/dist/flatpickr.css";
+
+@import "chartist/chartist-settings";
+@import "chartist/chartist";
+
+@import "./icofont.scss";
+@import "./whether-icon.scss";
+
+@import "./vendors/todo.scss";
+
+@import "leaflet/dist/leaflet.css";
+@import "./themify.scss";
+@import "./style.scss";

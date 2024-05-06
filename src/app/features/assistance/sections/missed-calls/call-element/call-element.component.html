@@ -1,0 +1,37 @@
+<div class="missed-call">
+  <div class="image-wrapper">
+    <img
+      width="50"
+      height="50"
+      loading="lazy"
+      [ngSrc]="CDN_URL + '/uploads/customer/' + customer.id + '.webp'"
+      alt=""
+      appFallbackSvg
+      [first_name]="customer.first_name"
+      [last_name]="customer.last_name"
+    />
+  </div>
+  <div class="info-wrapper">
+    <div class="client-info">
+      <span class="name">
+        <!-- <i class="fa-solid fa-user"></i> -->
+        {{ customer.first_name + " " + customer.last_name }}</span
+      >
+      <span class="missed-calls">
+        <i class="fa-regular fa-address-card"></i>
+        Date et heure: 22.2.2024-16h-53 |
+        <i class="fa-regular fa-address-card"></i> ID:  {{ customer.registration_number }}
+      </span>
+    </div>
+  </div>
+  <div class="action-wrapper">
+    <a class="blue">
+      <i class="fa-solid fa-video"></i>
+      Rappeler
+    </a>
+    <a class="red">
+      <i class="fa-solid fa-eye"></i>
+      Intervenir
+    </a>
+  </div>
+</div>

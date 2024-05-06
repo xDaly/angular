@@ -1,0 +1,42 @@
+<div class="d-flex align-items-center profile-media">
+  <img
+    class="b-r-25 profile-image"
+    [src]="CDN_URL+'/uploads/staff/'+user().id+'.webp'"
+    appFallbackSvg [first_name]="user().first_name" [last_name]="user().last_name" appSkeletonLoader 
+    alt=""
+  />
+  <div class="flex-grow-1 user">
+    <span>{{user().first_name + ' ' + user().last_name}}</span>
+    <p class="mb-0 font-nunito">
+      {{user().current_role ?? '' | translate}}
+      <svg>
+        <use href="assets/svg/icon-sprite.svg#header-arrow-down"></use>
+      </svg>
+    </p>
+  </div>
+</div>
+<ul class="profile-dropdown onhover-show-div">
+  <li class="disabled">
+    <a [routerLink]="'/user/users-profile'">
+      <app-feathericon [icon]="'user'"></app-feathericon><span>{{'Navbar.Account' | translate}} </span>
+    </a>
+  </li>
+  <li class="disabled">
+    <a [routerLink]="'/email/email-app'">
+      <app-feathericon [icon]="'mail'"></app-feathericon><span> {{'Navbar.Inbox' | translate}} </span>
+    </a>
+  </li>
+
+  <li class="disabled"> 
+    <a [routerLink]="'/user/users-edit'">
+      <app-feathericon [icon]="'settings'"></app-feathericon>
+      {{'Navbar.Settings' | translate}}
+    </a>
+  </li>
+  <li>
+    <a (click)="logOut()">
+      <app-feathericon [icon]="'log-in'"></app-feathericon>
+      <span>{{'Navbar.LogOut' | translate}}</span>
+    </a>
+  </li>
+</ul>

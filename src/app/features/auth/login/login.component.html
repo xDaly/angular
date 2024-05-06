@@ -1,0 +1,163 @@
+<!-- <div class="container-fluid p-0">
+  <div class="row m-0">
+    <div class="col-12 p-0">
+      <div class="login-card login-dark">
+        <div>
+          <div>
+            <a class="logo" [routerLink]="['/dashboard/default']">
+              <img
+                class="img-fluid for-light"
+                width="150"
+                src="assets/images/logo/logo_white.png"
+                alt="looginpage"
+            /></a>
+          </div>
+          <div class="login-main">
+            <form class="theme-form" [formGroup]="loginForm">
+              <h3>Sign in to account</h3>
+              <p>Enter your ID & password to login to lilibox Dashboard</p>
+              <div class="form-group">
+                <label class="col-form-label">Identifiant</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  required=""
+                  placeholder="03254598"
+                  formControlName="registration_number"
+                />
+                @if(loginForm.controls['registration_number'].touched &&
+                loginForm.controls['registration_number'].errors?.['required']){
+                <div class="text text-danger mt-1">Identifiant is required</div>
+                } @if(loginForm.controls['registration_number'].touched &&
+                loginForm.controls['registration_number'].errors?.['registration_number']){
+                <div class="text text-danger mt-1">Invalid registration_number</div>
+                }
+              </div>
+              <div class="form-group">
+                <label class="col-form-label">Password</label>
+                <div class="form-input position-relative">
+                  <input
+                    class="form-control"
+                    [type]="show ? 'text' : 'password'"
+                    formControlName="password"
+                    required=""
+                    placeholder="*********"
+                  />
+                  @if(!show){
+                  <div class="show-hide" (click)="showPassword()">
+                    <span class="show"> </span>
+                  </div>
+                  }@else{
+                  <div class="show-hide" (click)="showPassword()">
+                    <span class="Hide"></span>
+                  </div>
+                  } @if(loginForm.controls['password'].touched &&
+                  loginForm.controls['password'].errors?.['required']){
+                  <div class="text text-danger mt-1">Password is required</div>
+                  }
+                </div>
+              </div>
+              <div class="form-group mb-0">
+                <div class="text-end mt-3">
+                  <button
+                    class="btn btn-primary btn-block w-100"
+                    [disabled]="!loginForm.valid"
+                    (click)="login()"
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </div>
+              <h4 class="text-muted mt-4 or">Help</h4>
+              <div class="social mt-4">
+                <div class="btn-showcase">
+                  <a
+                    class="btn btn-light w-100"
+                    href="https://www.linkedin.com/login"
+                    target="_blank"
+                  >
+                    <app-feathericon
+                      [icon]="'help-circle'"
+                      class="txt-linkedin"
+                    ></app-feathericon
+                    >Forgot password?
+                  </a>
+                </div>
+              </div>
+              <p class="mt-4 mb-0 text-center">
+                Don't have account?
+                <a
+                  class="ms-2"
+                  [routerLink]="['/authentication/register-simple']"
+                  >Request an account
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="authentification-wrapper">
+  <div class="form">
+    <div class="title">
+      <span>Bienvenue</span> <span>sur lilibox services</span>
+      <p>Nous sommes heureux de vous avoir de retour.</p>
+    </div>
+
+    @if (isLoading) {
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    } @else {
+    <form [formGroup]="loginForm">
+      <div class="input-field">
+        <label for="">Identifiant</label>
+        <input
+          type="text"
+          placeholder="Identifiant"
+          formControlName="registration_number"
+        />
+      </div>
+      <div class="input-field">
+        <label for="">Password</label>
+        <input
+          [type]="show ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Mot de passe"
+        />
+        @if (!show) {<i
+          class="fa-light fa-eye pointer"
+          (click)="show = true"
+        ></i
+        >} @else {
+        <i class="fa-light fa-eye-slash pointer" (click)="show = false"></i> }
+      </div>
+      <p class="forgot">Mot de passe oublié ?</p>
+      <p class="error">
+        @if (loginError) {
+        <app-svg-icon [icon]="'/assets/svg/error.svg'" width="18" /> 
+        Les informations saisies sont incorrectes. Veuillez réessayer !
+      } @else {
+        <br />
+      }
+      </p>
+      <button
+        class="login-btn"
+        [class.disabled]="
+          isLoading ||
+          !loginForm.controls['password'].value ||
+          !loginForm.controls['registration_number'].value
+        "
+        (click)="login()"
+      >
+        Se connecter
+      </button>
+    </form>
+    }
+  </div>
+  <div class="image"></div>
+</div>

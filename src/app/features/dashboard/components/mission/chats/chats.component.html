@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body chat-body">
+    <div class="chat-box">
+      <div class="chat-left-aside">
+        <div class="people-list" id="people-list">
+          <ul class="list theme-scrollbar">
+            @for(user of searchUsers.slice(0, 10) ; track user){
+            <li class="clearfix my-1">
+              <img
+                class="rounded-circle user-image"
+                [src]="user.profile"
+                alt=""
+              />
+              <div class="status-circle {{ user.class }}"></div>
+              <div class="about">
+                <div class="name">{{ user.name }}</div>
+                <div class="status">{{ user.status }}</div>
+              </div>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

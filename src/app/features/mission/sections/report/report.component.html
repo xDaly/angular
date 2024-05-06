@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="buttons">
+    <span
+      class="option"
+      [class.selected]="selectedMenu == 'profil'"
+      (click)="selectedMenu = 'profil'"
+      >Profil client</span
+    >
+    <span
+      class="option"
+      [class.selected]="selectedMenu == 'script'"
+      (click)="selectedMenu = 'script'"
+      >Script d'appel</span
+    >
+  </div>
+  <div class="profil-card">
+    <img
+      [src]="CDN_URL + '/uploads/customer/' + customer().id + '.webp'"
+      alt=""
+      class="profil-img"
+    />
+    <div class="profil-info">
+      <div class="id">ID : {{ customer().registration_number }}</div>
+      <div class="name">Nom : {{ customer().first_name + ' ' + customer().last_name }}</div>
+      <div class="name">Date de naissance : {{ customer().birth_date }}</div>
+      <div class="city">Age : {{ calculateAge(customer().birth_date) }}</div>
+      <div class="zip">
+        Sexe : {{ "GENDER." + customer().gender | translate }}
+      </div>
+      <div class="zip">Adresse: {{ customer().address }}</div>
+    </div>
+  </div>
+</div>
+<app-tablet-info />
+<app-needs />
+<app-notes />
+<div class="service">
+  <div class="icon">
+    <app-svg-icon [icon]="'assets/svg/magic.svg'" [width]="35"></app-svg-icon>
+  </div>
+  <span class="title">Services et prestations</span>
+</div>

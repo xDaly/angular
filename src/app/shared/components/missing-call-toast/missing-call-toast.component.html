@@ -1,0 +1,23 @@
+@if (isVisible) {
+<div
+  class="missed-call-toast"
+  [@slideInRight]
+  [@slideOutRight]="isVisible ? 'in' : 'out'"
+  (click)="close()"
+>
+  <img
+    [src]="data?.image"
+    alt=""
+    class="caller"
+  />
+
+  <div class="info">
+    <span class="title"
+      ><app-svg-icon [width]="16" [icon]="'/assets/svg/missing-call.svg'" />
+      Appel entrant
+    </span>
+    <li class="name">Client : {{ data?.name }}</li>
+    <li class="id">ID : {{ data?.id }}</li>
+  </div>
+</div>
+}

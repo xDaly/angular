@@ -1,0 +1,59 @@
+{
+  "Dashboard": " Dashboard ",
+  "assistant": "Assistante",
+  "Navbar": {
+    "Calendar": "Calendrier",
+    "Settings": "Paramètres",
+    "LogOut": "Déconnexion",
+    "LogIn": "Connexion",
+    "Reclamations": "Réclamations",
+    "Messages": "Messages",
+    "Notifications": "Notifications",
+    "Account": "Compte",
+    "Inbox": "Messagerie"
+  },
+  "status": {
+    "online": "en ligne",
+    "offline": "hors ligne",
+    "busy": "occupé",
+    "away": "absent"
+  },
+  "MONTHS": {
+    "January": "Janvier",
+    "February": "Fevrier",
+    "March": "Mars",
+    "April": "Avril",
+    "May": "Mai",
+    "June": "Juin",
+    "July": "Juillet",
+    "August": "Aout",
+    "September": "Septembre",
+    "October": "Octobre",
+    "November": "Novembre",
+    "December": "Decembre"
+  },
+  "DAYS": {
+    "Monday": "Lundi",
+    "Tuesday": "Mardi",
+    "Wednesday": "Mercredi",
+    "Thursday": "Jeudi",
+    "Friday": "Vendredi",
+    "Saturday": "Samedi",
+    "Sunday": "Dimanche",
+    "SHORT": {
+      "Sun": "Dim",
+      "Mon": "Lun",
+      "Tue": "Mar",
+      "Wed": "Mer",
+      "Thu": "Jeu",
+      "Fri": "Ven",
+      "Sat": "Sam"
+    }
+  },
+  "GENDER": {
+    "male": "Homme",
+    "female": "Femme"
+  },
+  "invalid_parameters": "Paramètres invalides",
+  "connected_successfully": "Connecté avec succès"
+}

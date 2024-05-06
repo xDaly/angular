@@ -1,0 +1,70 @@
+<div class="card p-3">
+  @if (isReadyToCall()) {
+  <a
+    (click)="isDisabled = true; _events.staff_initialize_call(); enableButton()"
+    class="next-call pointer"
+    [class.disabled]="isDisabled"
+  >
+    <i class="fa-solid fa-phone-arrow-up-right"></i>
+    Lancer un appel
+  </a>
+  }
+  <div class="calls-info">
+    <div class="item all">
+      <span class="title">Total des appels</span>
+      <span class="count">49</span>
+    </div>
+    <div class="item done">
+      <span class="title">Appels complété</span>
+      <span class="count">49</span>
+    </div>
+    <div class="item progress">
+      <span class="title">Appels en cours</span>
+      <span class="count">49</span>
+    </div>
+    <div class="item waiting">
+      <span class="title">Appels en attente</span>
+      <span class="count">49</span>
+    </div>
+  </div>
+</div>
+<div class="card p-1">
+  <div class="history">
+    <span class="history-title"> Journal des appels de l'assistant X </span>
+    <div class="missed-calls-wrapper">
+      @for(item of history;track item){
+      <div class="history-item">
+        <span class="name">{{ item.name }}</span>
+        <span class="date">
+          <app-svg-icon
+            [width]="13"
+            [icon]="
+              item.type == 'incoming'
+                ? '/assets/svg/undo-arrow.svg'
+                : '/assets/svg/redo-arrow.svg'
+            "
+          ></app-svg-icon>
+          {{ item.date }}</span
+        >
+      </div>
+      }
+    </div>
+  </div>
+</div>
+<div class="chat-wrapper">
+  <div class="card chat" (click)="chatOpened = !chatOpened">
+    <div class="icon">
+      <app-svg-icon [width]="40" [icon]="'/assets/svg/chat.svg'"></app-svg-icon>
+    </div>
+    <div class="info">
+      <span>LILIBOX CENTER</span>
+      <span>Message interne <i class="fa-solid fa-chevron-down"></i></span>
+    </div>
+  </div>
+  <div
+    class="chat-container"
+    [ngClass]="chatOpened ? 'chat-opened' : 'chat-closed'"
+  >
+    <app-sup-chat />
+  </div>
+</div>

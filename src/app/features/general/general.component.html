@@ -1,0 +1,113 @@
+<div class="welcome">
+  <div class="left">
+    <div class="card-info">
+      <span class="name">Bonjour, <strong> {{user().first_name  + ' ' +user().last_name}}</strong> </span>
+      <span class="greeting"
+        >On vous souhaite une agréable journée au travail !</span
+      >
+      <span class="date"
+        >{{ time | date : "hh" }}H{{ time | date : "mm" }}</span
+      >
+    </div>
+    <app-calendar [weather]="weather()"  />
+    <div class="map-container">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44180.523988245506!2d6.14303885!3d46.20483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c650693d0e2eb%3A0xa0b695357b0bbc39!2sGeneva%2C%20Switzerland!5e0!3m2!1sen!2stn!4v1712240215107!5m2!1sen!2stn6&language=fr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          width="100%"
+          style="border: 0; border-radius: 15px"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="data">
+        <h5 class="title">Informations sur le Centre d'Appel</h5>
+        <ul>
+          <li><span>Nom du Centre : </span> SERVICE LILIBOX LAUSANNE</li>
+          <li>
+            <span>Adresse  : </span> Rue de Lyon 77, 1203 Genève
+          </li>
+          <li><span>Canton : </span>  de vaud</li>
+          <li><span>Pays : </span> Suisse</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="card-shape last-connection">
+      <div class="title">Dernière Connexion</div>
+      <div class="date"><span>Date : </span>22.2.2024</div>
+      <div class="time"><span>Heure : </span>16h53</div>
+    </div>
+    <div class="card-shape last-disconnect">
+      <div class="title">Dernière Déconnexion</div>
+      <div class="date"><span>Date : </span> 21.2.2024</div>
+      <div class="time"><span>Heure : </span> 17h30</div>
+    </div>
+    <div class="card-shape success-calls">
+      <div class="title">Nombre d'Appels Passés Aujourd'hui</div>
+      <div class="data">835 appel(s)</div>
+    </div>
+    <div class="card-shape total-calls">
+      <div class="title">Durée Totale des Appels</div>
+      <div class="data">2,908 min</div>
+    </div>
+    <div class="card-shape received-calls">
+      <div class="title">Nombre des appels reçus</div>
+      <div class="data">835 appel(s)</div>
+    </div>
+    <div class="card-shape outgoing-calls">
+      <div class="title">Nombre des appels émis</div>
+      <div class="data">835 appel(s)</div>
+    </div>
+    <div class="card-shape ratio-calls">
+      <div class="title">Durée Moyenne des Appels</div>
+      <div class="data">15.39 min</div>
+    </div>
+    <div class="card-shape missions">
+      <div class="title">Nombre des Missions</div>
+      <div class="data">423 Mission(s)</div>
+    </div>
+    <div class="welcome-card">
+      <span class="header">Allons-y avec énergie !</span>
+      <span class="quote">
+        "Ensemble, abordons chaque mission avec énergie et persévérance. Chaque
+        tâche est une opportunité de croissance et de réalisation. Faisons de
+        cette journée une journée remplie de succès et de satisfaction !"
+      </span>
+    </div>
+  </div>
+</div>
+<!-- 
+<div>
+  <form (submit)="joinCall()">
+    <button type="submit">Join</button>
+  </form>
+  <button (click)="leaveCall()">Leave</button>
+  <button (click)="stopRecording()">stopRecording()</button>
+</div>
+
+
+  <app-video
+    #localVideo
+    [track]="agoraService.getLocalVideoTrack()"
+    [videoId]="'local-video'"
+  ></app-video>
+  <app-video
+    #remoteVideo
+    *ngFor="
+      let remoteTrack of agoraService.remoteUsers | keyvalue;
+      let i = index
+    "
+    [track]="remoteTrack.value"
+    [videoId]="'remote-video-' + i"
+  ></app-video>
+
+  <video id="local" style="display: none;width: 250px;height:250px; object-fit: cover;"[srcObject]="localsteam" autoplay playsInline></video>
+
+  <video  id="remote" style="display: none;width: 250px;height:250px; object-fit: cover;" [srcObject]="remotestream" autoplay playsInline></video>
+
+
+<canvas #combinedCanvas style="display: none;"></canvas> -->

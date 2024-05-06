@@ -1,0 +1,36 @@
+.missed-call-toast {
+  height: 70px;
+  z-index: 9999;
+  background-color: #ff6150;
+  display: flex;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  pointer-events: auto;
+  .caller {
+    width: 70px;
+    margin-left: 4px;
+    border-radius: 7px 0px 0px 7px;
+    object-fit: cover;
+  }
+  .info {
+    background-color: white;
+    border-radius: 0px 7px 7px 0px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4px;
+    padding: 5px;
+
+    .title {
+      color: #ff6150;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .id,
+    .name {
+      font-size: 12px;
+      color: #67748e;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.card {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin:0 !important;
+  .title{
+    color:#FF6961;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+  }
+  .missed-calls-wrapper {
+    height: calc(100vh - 170px);
+    overflow-y: auto;
+  }
+  // custom scroll bar 
+  .missed-calls-wrapper::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .missed-calls-wrapper::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+
+  .missed-calls-wrapper::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9;
+    border-radius: 4px;
+  }
+
+  .missed-calls-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #D9D9D9;
+  }
+  
+}

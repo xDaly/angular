@@ -1,0 +1,55 @@
+{
+  "Dashboard": " Dashboard ",
+  "assistant": "Assistant",
+  "Navbar":{
+    "Calendar": "Calendar",
+    "Settings": "Settings",
+    "LogOut": "Log Out",
+    "LogIn": "Log In",
+    "Reclamations": "Reclamations",
+    "Messages": "Messages",
+    "Notifications": "Notifications",
+    "Account": "Account",
+    "Inbox": "Inbox"
+  },
+  "status": {
+    "online": "Online",
+    "offline": "Offline",
+    "busy": "Busy",
+    "away": "Away"
+  },
+  "MONTHS": {
+    "January": "January",
+    "February": "February",
+    "March": "March",
+    "April": "April",
+    "May": "May",
+    "June": "June",
+    "July": "July",
+    "August": "August",
+    "September": "September",
+    "October": "October",
+    "November": "November",
+    "December": "December"
+  },
+  "DAYS": {
+    "Sunday": "Sunday",
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday",
+    "SHORT": {
+      "Sun": "Sun",
+      "Mon": "Mon",
+      "Tue": "Tue",
+      "Wed": "Wed",
+      "Thu": "Thu",
+      "Fri": "Fri",
+      "Sat": "Sat"
+    }
+  },
+  "invalid_parameters": "Invalid parameters",
+  "connected_successfully": "Connected successfully"
+}

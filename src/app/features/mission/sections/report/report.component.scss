@@ -1,0 +1,94 @@
+.card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px !important;
+  padding: 10px;
+  margin: 0 !important;
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    .option {
+      width: 50%;
+      border-radius: 50px;
+      height: 36px;
+      line-height: 36px;
+      font-weight: 700;
+      font-size: 16px;
+      color: #979797;
+      cursor: pointer;
+    }
+    .selected {
+      color: #0080ab !important;
+      background: #1eb4eb33;
+    }
+  }
+  .profil-card {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    height: 125px;
+    .profil-img {
+      width: 125px;
+      height: 125px;
+      border-radius: 15px;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+    .profil-info {
+      display: flex;
+      flex-direction: column;
+      .name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+      }
+      .phone {
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+      }
+    }
+  }
+  .status {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+  }
+}
+
+.service {
+  cursor: pointer;
+  height: 70px;
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  .icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px 0px 15px 15px;
+    background-color: #fe7838;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    text-align: center;
+    width: calc(100% - 70px);
+    font-size: 30px;
+    line-height: 30px;
+    // font-size: larger;
+    color: #fe7838;
+    font-weight: 700;
+  }
+  &:hover {
+    .icon {
+      background-color: #fe773885;
+    }
+    .title {
+      color: #fe773885;
+    }
+  }
+}

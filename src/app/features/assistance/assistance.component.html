@@ -1,0 +1,20 @@
+<div class="call-list-wrapper">
+  <div class="missed-calls">
+    @if (call()?.customer) { 
+    <app-report [customer]="call().customer" />
+    } @else {
+      <app-missed-calls />
+    }
+  </div>
+  <div class="next-calls">
+    @if (call() == undefined) {
+    <app-next-calls />
+    } @else {
+    <app-call />
+    }
+    <!-- <app-call /> -->
+  </div>
+  <div class="main">
+    <app-main />
+  </div>
+</div>

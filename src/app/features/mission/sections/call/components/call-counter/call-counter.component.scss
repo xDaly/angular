@@ -1,0 +1,21 @@
+.counter {
+    background-color: #0000005f;
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;  
+    align-items: center;
+    
+  .fa-solid {
+    background-color: white;
+    color:green;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px 
+  }
+  .timer{
+    font-weight: 700;
+    color:white;
+    font-size: 20px;
+    margin-left: 2px;
+  }
+}

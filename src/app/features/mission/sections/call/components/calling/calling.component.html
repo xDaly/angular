@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <img
+    [src]="CDN_URL +'/uploads/customer/' + customer().id +'.webp'"
+    class="calling"
+    alt=""
+    appFallbackSvg
+  />
+  <span class="name">{{ customer().first_name + ' ' + customer().last_name }}</span>
+  <span class="status">Appel en cours</span>
+  <div class="wave">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <a class="btn-control hangup" (click)="hangup()">
+    <app-svg-icon [icon]="'/assets/svg/hangup.svg'" />
+    <span> Raccrocher</span></a
+  >
+</div>

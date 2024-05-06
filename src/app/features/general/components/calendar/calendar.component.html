@@ -1,0 +1,92 @@
+<div class="app-container">
+  <div class="date-picker" [attr.title]="datepickerTitle">
+    <div
+      class="datepicker"
+      [ngClass]="{
+        am: timeframe === 'am',
+        pm: timeframe === 'pm',
+        compact: compact
+      }"
+    >
+      <!-- <div class="datepicker-header">
+          <div class="datepicker-title" *ngIf="datepickerTitle">{{ datepickerTitle }}</div>
+          <div class="datepicker-subheader">{{ customMessage }} {{ selectedDay }} {{ monthNames[selectedDate.getMonth()] }} {{ selectedDate.getDate() }}, {{ selectedDate.getFullYear() }}</div>
+        </div> -->
+      <div class="datepicker-calendar">
+        <div class="calendar-header">
+          <div class="goback" (click)="moveBack()" *ngIf="pickdate">
+            <!-- SVG for back arrow -->
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+          <div class="current-month-container">
+            {{ "MONTHS." + monthNames[selectedDate.getMonth()] | translate }}
+          </div>
+          <div class="goforward" (click)="moveForward()" *ngIf="pickdate">
+            <!-- SVG for forward arrow -->
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="calendar-day-header">
+          <span *ngFor="let day of days" class="day-label">{{
+      "DAYS.SHORT." +    day.short | translate
+          }}</span>
+        </div>
+        <div class="calendar-grid">
+          <div
+            *ngFor="let day of month; let $index = index; trackBy: trackByIndex"
+            class="datecontainer"
+            [ngStyle]="{ 'margin-left': calcOffset(day, $index) }"
+          >
+            <div
+              class="datenumber"
+              [ngClass]="{ 'day-selected': day.selected }"
+              (click)="selectDate(day)"
+            >
+              {{ day.daydate }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="timepicker" *ngIf="picktime">
+        <!-- Time picker content -->
+      </div>
+      <div class="container__inner">
+        <section class="weatherCard partialy-cloudy">
+          <div class="title__container">
+            <div class="weatherIcon">
+              <img
+                width="38"
+                [src]="'https:' + weather()?.current?.condition?.icon"
+                alt=""
+              />
+            </div>
+            <div>
+              <div class="title">Météo</div>
+              <div class="city">{{ weather()?.location?.name }}</div>
+            </div>
+          </div>
+          <div class="main">
+            <div class="temperature">
+              <b class="temperature__max">{{ weather()?.current?.temp_c }}ºC</b>
+              <b class="temperature__min">{{ weather()?.current?.temp_f }}ºF</b>
+            </div>
+            <div class="forecast">
+              {{ weather()?.current?.condition?.text }}
+            </div>
+          </div>
+          <!-- <div class="info__container">
+                  <div class="info pressure">
+                    <div class="info__title">Humidity</div>
+                    <div class="info__value">50%</div>
+                  </div>
+            
+                  <div class="info rain">
+                    <div class="info__title">Precipitation</div>
+                    <div class="info__value">10mm</div>
+                  </div>
+                </div> -->
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

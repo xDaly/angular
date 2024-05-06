@@ -1,0 +1,50 @@
+@import "./assets/scss/app.scss";
+
+@import "ngx-toastr/toastr";
+@import url("https://cdn.jsdelivr.net/gh/xDaly/fontawesome_6.5/css/all.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.skeleton-loader {
+  width: 50px; /* Adjust to fit the image size */
+  height: 50px; /* Adjust to fit the image size */
+  border-radius: 50%;
+  background-color: #ccc;
+  /* Optional: Add animation for better UX */
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #eee;
+  }
+  50% {
+    background-color: #ddd;
+  }
+  100% {
+    background-color: #eee;
+  }
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  // outline: 1px solid greenyellow;
+}
+
+/* Importing Bootstrap SCSS file. */
+//@import 'bootstrap/scss/bootstrap';
+
+.draggable {
+  cursor: move;
+  user-select: none;
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,424 @@
+
+
+// Date Picker Component Styles
+.app-container {
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+
+  margin: 10px 0px;
+
+  .buttons-container {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    height: 40px;
+    font-family: "Roboto", sans-serif;
+
+    .cancel-button,
+    .save-button {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 15px;
+      border-radius: 2px;
+      margin-right: 15px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+
+      &.cancel-button {
+        background: white;
+        color: #0dad83;
+      }
+
+      &.save-button {
+        background: #0dad83;
+        color: white;
+      }
+    }
+  }
+
+  .datepicker {
+    position: relative;
+    width: 100%;
+    display: block;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    transition: background 0.15s ease;
+
+    &.am {
+      background: white;
+    }
+
+    &.pm {
+      background: #0dad83;
+    }
+
+    .datepicker-header {
+      width: 100%;
+      color: white;
+      overflow: hidden;
+
+      .datepicker-title,
+      .datepicker-subheader {
+        float: left;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 15px;
+
+        &.datepicker-title {
+          width: 50%;
+          text-align: left;
+          font-size: 20px;
+        }
+
+        &.datepicker-subheader {
+          width: 50%;
+          font-size: 14px;
+          text-align: right;
+        }
+      }
+    }
+
+    .datepicker-calendar {
+      width: 50%;
+      float: left;
+      padding: 5px;
+      max-width: 400px;
+
+      .calendar-header {
+        color: black;
+        font-weight: bolder;
+        text-align: center;
+        font-size: 18px;
+        // padding-top: 10px;
+        position: relative;
+
+        .current-month-container {
+          display: inline-block;
+          height: 30px;
+          color:#1EB4EB;
+        }
+
+        .goback,
+        .goforward {
+          height: 30px;
+          width: 30px;
+          border-radius: 30px;
+          display: inline-block;
+          cursor: pointer;
+          position: relative;
+          top: -4px;
+          color: #1EB4EB;
+
+          &.goback {
+            float: left;
+            margin-left: 3.8%;
+          }
+
+          &.goforward {
+            float: right;
+            margin-right: 3.8%;
+          }
+
+          path {
+            transition: stroke 0.15s ease;
+          }
+        }
+      }
+
+      .calendar-day-header {
+        .day-label {
+          color: #8a8a8a;
+          padding: 5px 0;
+          width: 14.2857142%;
+          display: inline-block;
+          text-align: center;
+        }
+      }
+
+      .calendar-grid {
+        .datecontainer {
+          width: 14.2857142%;
+          display: inline-block;
+          text-align: center;
+          padding:  0;
+
+          .datenumber {
+            max-width: 25px;
+            max-height: 25px;
+            line-height: 25px;
+            margin: 0 auto;
+            color: #8a8a8a;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            z-index: 1;
+            transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+
+            &:hover {
+              color: white;
+            }
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              height: 25px;
+              width: 25px;
+              border-radius: 100px;
+              z-index: -1;
+              background: transparent;
+              transform: scale(0.75);
+              transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+            }
+
+            &:hover::before {
+              background: #1EB4EB;
+              transform: scale(1);
+            }
+
+            &.day-selected {
+              color: white;
+
+              &::before {
+                background: #1EB4EB;
+                transform: scale(1);
+                animation: select-date 0.25s forwards;
+              }
+            }
+          }
+        }
+      }
+
+      .timepicker {
+        width: 50%;
+        float: left;
+        padding: 40px 30px 30px;
+        position: relative;
+        top: 50px;
+        overflow: hidden;
+        transition: background 0.15s ease;
+
+        .timepicker-container-outer {
+          max-width: 320px;
+          margin: 0 auto;
+          position: relative;
+
+          .timeline-container {
+            width: 100%;
+            height: 36px;
+            position: relative;
+
+            .current-time {
+              width: 40px;
+              height: 40px;
+              position: absolute;
+              top: -2px;
+              transform: rotate(45deg);
+              border-radius: 20px;
+
+              &::after {
+                content: "";
+                width: 40px;
+                height: 40px;
+                background: #1EB4EB;
+                border-radius: 20px 20px 3px 20px;
+              }
+
+              .actual-time {
+                line-height: 40px;
+                text-align: center;
+                font-size: 12px;
+                transform: rotate(-45deg);
+                color: white;
+              }
+            }
+          }
+
+          .hours-container {
+            .hour-mark {
+              width: 2px;
+              height: 4px;
+              background: #0dad83;
+
+              &:nth-child(3n) {
+                height: 6px;
+              }
+            }
+          }
+
+          .am-pm-container {
+            .am-pm-button {
+              height: 36px;
+              line-height: 36px;
+              text-align: center;
+              color: white;
+              border-radius: 4px;
+              cursor: pointer;
+
+              &:first-child {
+                background: #0dad83;
+              }
+
+              &:last-child {
+                background: white;
+                color: #0dad83;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes select-date {
+    0% {
+      background: #ffab91;
+    }
+    100% {
+      background: #1EB4EB;
+    }
+  }
+}
+
+
+
+  h1 {
+    color: #1EB4EB;
+    font-family: Parisienne, Roboto;
+    font-size: 80px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .container__inner {
+    display: flex;
+  }
+
+  .title__container {
+    align-items: center;
+    display: flex;
+  }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+  }
+
+  .weatherIcon {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    margin-right: 15px;
+    width: 36px;
+  }
+
+  .partialy-cloudy .weatherIcon {
+    color: #1EB4EB;
+  }
+
+  .rainy .weatherIcon {
+    color: #2983fe;
+  }
+
+  .weatherCard {
+    // border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // margin: 20px;
+    padding: 23px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .partialy-cloudy {
+    background: url("https://assets.airtrfx.com/media-em/ey/cities/Geneva.jpg?width=500&quality=80&fit=crop&format=auto&opt=true");
+    background-size: cover;
+    color: #1EB4EB;
+  }
+
+  .rainy {
+    background: url("https://images.unsplash.com/photo-1534261271554-002a32561480?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NjAwODA3NDg&ixlib=rb-1.2.1&q=80");
+    background-size: cover;
+    color: #fff;
+  }
+
+  .info__container {
+    display: flex;
+  }
+
+  .info {
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: center;
+    width: 110px;
+    margin: 0px 5px;
+  }
+
+  .info__title {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .info__value {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .temperature {
+    align-items: center;
+    display: flex;
+    margin: 5px 0;
+  }
+
+  .temperature__max {
+    font-size: 48px;
+    color: white;
+  }
+
+  .temperature__min {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #000;
+    display: inline-flex;
+    font-size: 12px;
+    margin-left: 15px;
+    padding: 0 8px;
+    height: 24px;
+  }
+
+  .pressure {
+    background-color: #1EB4EB;
+    color: #fff;
+  }
+
+  .visibility {
+    background-color: #cce16a;
+    color: #000;
+    margin: 0 15px;
+  }
+
+  .rain {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .forecast,
+  .city {
+    font-size: 14px;
+    color: white;
+  }
+

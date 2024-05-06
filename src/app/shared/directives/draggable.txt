@@ -1,0 +1,27 @@
+<h1>Draggable</h1>
+
+<h2>Part 1 - draggable directive</h2>
+// appDraggable to activate dragging 
+<div class="box" appDraggable>
+  Draggable
+</div>
+
+<h2>Part 2 - movable directive</h2>
+//appMovable to let element draggable and move 
+<div class="box" appMovable>
+  Movable 1
+</div>
+//appMovableReset to reset after mouse leave 
+<div class="box" appMovable [appMovableReset]="true">
+  Movable 2
+</div>
+
+<h2>Part 3 - movable area</h2>
+//appMovableArea to create an area where the box will never go out of that area
+<div class="movable-area" appMovableArea>
+  <div class="box" appMovable *ngFor="let box of trappedBoxes">
+    {{box}}
+  </div>
+</div>
+
+<button (click)="add()">Add box</button>
